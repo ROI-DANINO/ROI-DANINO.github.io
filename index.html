@@ -3,610 +3,543 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>רועי דנינו | תהליכי AI לעבודה אמיתית</title>
-  <meta name="description" content="סשן 1:1 עם רועי דנינו לבניית סביבת AI ומהלך עבודה פרקטי סביב העבודה האמיתית שלך — לא סתם הרצאה, משהו שפותחים ומשתמשים בו גם מחר.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="רועי דנינו | תהליכי AI לעבודה אמיתית">
-  <meta property="og:description" content="2 שעות. 500 ₪. בונים סביבת AI ומהלך עבודה חכם סביב העבודה האמיתית שלך.">
-  <meta property="og:locale" content="he_IL">
-  <meta property="og:url" content="https://roi-danino.onrender.com/">
-  <meta property="og:site_name" content="רועי דנינו">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="רועי דנינו | תהליכי AI לעבודה אמיתית">
-  <meta name="twitter:description" content="סשן 1:1 לבניית סביבת AI ומהלך עבודה פרקטי סביב העבודה שלך.">
+  <title>רועי דנינו — תהליכי AI לעבודה אמיתית</title>
+  <meta name="description" content="סשן 1:1 לבניית מהלך עבודה מותאם עם AI. 2 שעות, 500 ₪, זום או פרונטלי.">
   <link rel="canonical" href="https://roi-danino.onrender.com/">
+
+  <meta property="og:title" content="רועי דנינו — תהליכי AI לעבודה אמיתית">
+  <meta property="og:description" content="סשן 1:1 לבניית מהלך עבודה מותאם עם AI. 2 שעות, 500 ₪.">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://roi-danino.onrender.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="רועי דנינו — תהליכי AI לעבודה אמיתית">
+  <meta name="twitter:description" content="סשן 1:1 לבניית מהלך עבודה מותאם עם AI.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
+    /* ── RESET ──────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #2F4156;
-      --dark-navy: #37506a;
-      --teal: #567C8D;
-      --sky: #C8D9E6;
-      --vanilla: #F0E7D5;
-      --white: #FFFFFF;
-      --wa: #25D366;
-      --font: 'Heebo', sans-serif;
-    }
-
-    html {
-      direction: rtl;
-      scroll-behavior: smooth;
-    }
-
     body {
-      min-height: 100vh;
-      background: var(--sky);
-      color: var(--navy);
       font-family: var(--font);
-      font-size: 16px;
-      line-height: 1.6;
-      padding-bottom: calc(96px + env(safe-area-inset-bottom));
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      direction: rtl;
+      overflow-x: hidden;
+      padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
     }
 
-    a { color: inherit; }
+    /* ── DESIGN TOKENS ──────────────────────────────────── */
+    :root {
+      --navy:      #2F4156;
+      --dark-navy: #37506a;
+      --teal:      #567C8D;
+      --sky:       #C8D9E6;
+      --vanilla:   #F0E7D5;
+      --white:     #FFFFFF;
+      --wa:        #25D366;
+      --font:      'Heebo', sans-serif;
+    }
 
+    /* ── CONTAINER ──────────────────────────────────────── */
     .container {
       max-width: 480px;
       margin: 0 auto;
       padding: 0 24px;
-    }
-
-    .brand-line,
-    .section-label {
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 100svh;
-      background:
-        radial-gradient(circle at 13% 9%, rgba(240, 231, 213, 0.82), transparent 28%),
-        radial-gradient(circle at 88% 16%, rgba(86, 124, 141, 0.26), transparent 35%),
-        linear-gradient(155deg, var(--sky) 0%, var(--white) 46%, var(--vanilla) 100%);
-      padding: 54px 0 64px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.18;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(47, 65, 86, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(47, 65, 86, 0.08) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.55), transparent 72%);
-    }
-
-    .hero .container {
       position: relative;
       z-index: 1;
     }
 
-    .brand-line {
-      color: var(--teal);
-      margin-bottom: 34px;
-    }
-
-    .voice-anchor {
-      border-right: 3px solid var(--teal);
-      color: var(--dark-navy);
-      font-size: 15px;
-      font-style: italic;
-      font-weight: 600;
-      line-height: 1.7;
-      margin-bottom: 34px;
-      padding-right: 16px;
-    }
-
-    .hero-h1 {
-      color: var(--navy);
-      font-size: clamp(36px, 10vw, 52px);
+    /* ── TYPOGRAPHY ─────────────────────────────────────── */
+    .text-hook {
+      font-family: var(--font);
+      font-size: clamp(40px, 10vw, 64px);
       font-weight: 900;
-      letter-spacing: 0;
-      line-height: 1.08;
-      margin-bottom: 24px;
+      line-height: 1.1;
     }
-
-    .hero-h1 span {
-      color: var(--dark-navy);
-      box-shadow: inset 0 -0.36em 0 rgba(200, 217, 230, 0.9);
-    }
-
-    .hero-sub {
-      color: var(--dark-navy);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.7;
-      margin-bottom: 30px;
-    }
-
-    .hero-proof {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
-
-    .proof-row {
-      align-items: center;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(86, 124, 141, 0.18);
-      border-radius: 16px;
-      box-shadow: 0 14px 34px rgba(47, 65, 86, 0.08);
-      color: var(--navy);
-      display: grid;
-      font-size: 14px;
+    .text-title {
+      font-family: var(--font);
+      font-size: clamp(26px, 6vw, 38px);
       font-weight: 800;
-      gap: 10px;
-      grid-template-columns: 32px 1fr;
-      padding: 12px 14px;
-    }
-
-    .proof-mark {
-      align-items: center;
-      background: var(--navy);
-      border-radius: 11px;
-      color: var(--vanilla);
-      display: inline-flex;
-      font-size: 13px;
-      font-weight: 900;
-      height: 32px;
-      justify-content: center;
-      width: 32px;
-    }
-
-    .hero-mini-cta {
-      color: var(--teal);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .diagnosis {
-      background: var(--dark-navy);
-      color: var(--white);
-      padding: 68px 0;
-    }
-
-    .diagnosis .section-label,
-    .cta .section-label {
-      color: var(--sky);
-      margin-bottom: 14px;
-    }
-
-    .section-title {
-      font-size: clamp(28px, 7vw, 36px);
-      font-weight: 900;
-      letter-spacing: 0;
-      line-height: 1.18;
-      margin-bottom: 18px;
-    }
-
-    .diagnosis-intro {
-      color: var(--sky);
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.7;
-      margin-bottom: 28px;
-    }
-
-    .break-cards {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 34px;
-    }
-
-    .break-card {
-      background: rgba(200, 217, 230, 0.12);
-      border: 1px solid rgba(200, 217, 230, 0.2);
-      border-radius: 18px;
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 800;
-      line-height: 1.55;
-      padding: 18px;
-    }
-
-    .resolve {
-      background: var(--sky);
-      border-radius: 20px;
-      color: var(--navy);
-      font-size: 17px;
-      font-weight: 800;
-      line-height: 1.65;
-      padding: 22px;
-    }
-
-    .resolve strong {
-      display: block;
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.25;
-      margin-bottom: 8px;
-    }
-
-    .session {
-      background: var(--vanilla);
-      padding: 70px 0;
-    }
-
-    .session .section-label {
-      color: var(--teal);
-      margin-bottom: 14px;
-    }
-
-    .session-title {
-      color: var(--navy);
-      font-size: clamp(28px, 7vw, 36px);
-      font-weight: 900;
-      letter-spacing: 0;
       line-height: 1.2;
-      margin-bottom: 14px;
     }
-
-    .session-sub {
-      color: var(--dark-navy);
-      font-size: 17px;
-      font-weight: 700;
-      line-height: 1.68;
-      margin-bottom: 34px;
-    }
-
-    .build-steps {
-      display: grid;
-      gap: 22px;
-      margin-bottom: 34px;
-    }
-
-    .build-step {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 38px 1fr;
-    }
-
-    .step-num {
-      align-items: center;
-      background: var(--navy);
-      border-radius: 13px;
-      color: var(--vanilla);
-      display: inline-flex;
-      font-size: 15px;
-      font-weight: 900;
-      height: 38px;
-      justify-content: center;
-      width: 38px;
-    }
-
-    .step-copy h3 {
-      color: var(--navy);
-      font-size: 18px;
-      font-weight: 900;
-      line-height: 1.3;
-      margin-bottom: 5px;
-    }
-
-    .step-copy p {
-      color: var(--dark-navy);
-      font-size: 15px;
+    .text-subtitle {
+      font-family: var(--font);
+      font-size: clamp(17px, 4vw, 22px);
       font-weight: 600;
-      line-height: 1.65;
+      line-height: 1.45;
+    }
+    .text-body {
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+    .emphasis { color: var(--sky); }
+
+    /* ── BACKGROUND TREATMENTS ──────────────────────────── */
+    .bg-topo {
+      background-color: var(--navy);
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(200,217,230,0.06) 28px, rgba(200,217,230,0.06) 30px),
+        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(200,217,230,0.04) 28px, rgba(200,217,230,0.04) 30px);
+    }
+    .bg-paper {
+      background-color: var(--vanilla);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%23F0E7D5'/%3E%3Crect width='1' height='1' x='0' y='0' fill='rgba(0,0,0,0.03)'/%3E%3Crect width='1' height='1' x='2' y='2' fill='rgba(0,0,0,0.02)'/%3E%3C/svg%3E");
+      background-size: 4px 4px;
     }
 
-    .outcome-box {
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid rgba(86, 124, 141, 0.18);
-      border-radius: 20px;
+    /* ── GEOMETRIC ACCENTS ──────────────────────────────── */
+    .corner-tr {
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-top: 60px solid var(--sky);
+      border-left: 60px solid transparent;
+    }
+    .diagonal-banner {
+      position: absolute;
+      left: -10%; width: 120%;
+      height: 48px;
+      background: var(--sky);
+      opacity: 0.85;
+    }
+    .diagonal-banner--top    { top: 64px;    transform: rotate(-2deg); }
+    .diagonal-banner--bottom { bottom: 64px; transform: rotate(2deg); }
+
+    /* ── BADGES ─────────────────────────────────────────── */
+    .badge {
+      display: inline-block;
+      padding: 4px 16px;
+      border-radius: 999px;
+      background: var(--sky);
       color: var(--navy);
-      font-size: 17px;
-      font-weight: 900;
-      line-height: 1.6;
-      margin-bottom: 22px;
-      padding: 22px;
-    }
-
-    .roi-note {
-      border-top: 1px solid rgba(86, 124, 141, 0.28);
-      color: var(--dark-navy);
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 1.75;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       margin-bottom: 20px;
-      padding-top: 22px;
+    }
+    .badge--dark {
+      background: var(--navy);
+      color: var(--sky);
+      border: 1px solid var(--sky);
     }
 
-    .session-pills {
+    /* ── PILLS ROW ──────────────────────────────────────── */
+    .pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-top: 24px;
     }
-
     .pill {
-      background: var(--navy);
+      padding: 6px 14px;
       border-radius: 999px;
-      color: var(--white);
-      font-size: 13px;
-      font-weight: 800;
-      padding: 7px 14px;
-    }
-
-    .cta {
-      background:
-        radial-gradient(circle at 18% 0%, rgba(200, 217, 230, 0.2), transparent 30%),
-        linear-gradient(160deg, var(--navy), var(--dark-navy));
-      color: var(--white);
-      padding: 76px 0 104px;
-      text-align: center;
-    }
-
-    .cta-headline {
-      color: var(--white);
-      font-size: clamp(28px, 7vw, 36px);
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .cta-sub {
+      border: 1px solid var(--sky);
       color: var(--sky);
-      font-size: 16px;
+      font-family: var(--font);
+      font-size: 13px;
       font-weight: 700;
-      line-height: 1.7;
-      margin: 0 auto 28px;
-      max-width: 340px;
+    }
+    .pill--dark {
+      border-color: var(--teal);
+      color: var(--teal);
     }
 
-    .whatsapp-btn,
-    .floating-whatsapp {
-      align-items: center;
-      background: var(--wa);
-      color: var(--white);
+    /* ── VOICE ANCHOR QUOTE BAR ─────────────────────────── */
+    .voice-anchor {
+      border-right: 3px solid var(--teal);
+      padding: 8px 16px 8px 0;
+      margin: 4px 0 24px;
+      color: var(--sky);
+      font-style: italic;
+      font-size: 15px;
+      line-height: 1.6;
+      list-style: none;
+    }
+
+    /* ── CARDS ──────────────────────────────────────────── */
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      padding: 28px 24px 24px;
+      direction: rtl;
+      transition: transform 0.3s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card-corner {
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-top: 40px solid var(--sky);
+      border-left: 40px solid transparent;
+      transition: border-width 0.3s ease;
+    }
+    .card:hover .card-corner { border-top-width: 64px; border-left-width: 64px; }
+    .card--light { background: var(--vanilla); }
+    .card--light .card-title { color: var(--navy); font-size: 15px; font-weight: 800; margin-bottom: 6px; }
+    .card--light .card-body  { color: var(--navy); opacity: 0.8; font-size: 14px; line-height: 1.5; }
+    .card--dark  { background: var(--navy); }
+    .card--dark .card-corner { border-top-color: var(--sky); }
+    .card--dark .card-body   { color: var(--sky); font-size: 15px; opacity: 0.9; }
+    .card-emoji { font-size: 24px; margin-bottom: 12px; display: block; }
+    .card-stack { display: flex; flex-direction: column; gap: 12px; margin: 24px 0; }
+
+    /* ── QUOTE BLOCK ────────────────────────────────────── */
+    .quote-block {
+      position: relative;
+      padding: 48px 36px 36px 28px;
+      border-radius: 16px;
+      direction: rtl;
+      margin-top: 24px;
+    }
+    .quote-mark {
+      position: absolute;
+      top: 8px; right: 24px;
+      font-size: 120px;
+      line-height: 1;
+      color: var(--sky);
       font-family: var(--font);
       font-weight: 900;
-      justify-content: center;
-      text-decoration: none;
-      -webkit-tap-highlight-color: transparent;
+      opacity: 0.6;
+      pointer-events: none;
+      user-select: none;
+    }
+    .quote-text {
+      color: var(--navy);
+      position: relative;
+      z-index: 1;
     }
 
-    .whatsapp-btn {
-      border-radius: 999px;
-      box-shadow: 0 16px 38px rgba(37, 211, 102, 0.34);
-      display: inline-flex;
+    /* ── NUMBERED STEPS ─────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 24px; margin: 28px 0; }
+    .step  { display: flex; align-items: flex-start; gap: 16px; }
+    .step-number {
+      flex-shrink: 0;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .step-content h3 {
+      color: var(--navy);
       font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .step-content p {
+      color: var(--teal);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* ── DELIVERABLE GRID (2×2) ─────────────────────────── */
+    .deliverables {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 28px 0;
+    }
+    .deliverables .card { padding: 20px 16px 18px; }
+
+    /* ── ROI NOTE ────────────────────────────────────────── */
+    .roi-note {
+      border-top: 1px solid rgba(86,124,141,0.3);
+      padding-top: 20px;
+      margin-top: 4px;
+    }
+    .roi-note p { color: var(--teal); }
+
+    /* ── WHATSAPP CTA BUTTON ────────────────────────────── */
+    .btn-wa {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: 10px;
-      margin: 0 auto 18px;
-      min-height: 60px;
-      padding: 18px 32px;
       width: 100%;
-      max-width: 360px;
-    }
-
-    .cta-small {
-      color: var(--sky);
-      font-size: 14px;
-      font-weight: 600;
-      opacity: 0.9;
-    }
-
-    .floating-whatsapp {
-      border: 1px solid rgba(255, 255, 255, 0.72);
+      background: var(--wa);
+      color: var(--white);
+      border: none;
+      padding: 16px 24px;
       border-radius: 999px;
-      bottom: calc(18px + env(safe-area-inset-bottom));
-      box-shadow: 0 16px 38px rgba(37, 211, 102, 0.42), 0 0 0 8px rgba(37, 211, 102, 0.13);
-      display: inline-flex;
-      height: 62px;
+      font-family: var(--font);
+      font-size: 18px;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 16px;
+    }
+    .btn-wa:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(37,211,102,0.4);
+    }
+    .btn-wa svg { flex-shrink: 0; }
+
+    /* ── FLOATING WHATSAPP BUTTON ───────────────────────── */
+    .wa-float {
       position: fixed;
+      bottom: 20px;
       right: 18px;
-      width: 62px;
       z-index: 20;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: var(--wa);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      animation: waGlow 2.5s ease-in-out infinite;
     }
+    .wa-float svg { width: 32px; height: 32px; }
 
-    .floating-whatsapp svg {
-      height: 27px;
-      width: 27px;
-    }
+    /* ── SECTION LAYOUT ─────────────────────────────────── */
+    .hero      { position: relative; overflow: hidden; padding: 88px 0 80px; }
+    .diagnosis { position: relative; overflow: hidden; padding: 72px 0; background: var(--dark-navy); }
+    .session   { position: relative; overflow: hidden; padding: 72px 0; }
+    .cta       { position: relative; overflow: hidden; padding: 80px 0 72px; }
 
-    .sr-only {
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-    }
-
+    /* ── DESKTOP BREAKPOINT ─────────────────────────────── */
     @media (min-width: 720px) {
-      body { font-size: 17px; }
       .container { max-width: 620px; }
-      .hero {
-        align-items: flex-start;
-        min-height: 720px;
-        padding: 118px 0 86px;
-      }
-      .hero-proof { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 120px 0 100px; }
     }
 
+    /* ── ANIMATIONS ─────────────────────────────────────── */
+    @keyframes slideInFromRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes waGlow {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.5); }
+      50%       { box-shadow: 0 4px 32px rgba(37,211,102,0.8); }
+    }
+
+    .reveal-rtl { opacity: 0; }
+    .reveal-rtl.is-visible {
+      animation: slideInFromRight 0.6s cubic-bezier(0.22,1,0.36,1) forwards;
+    }
+
+    .reveal-rtl:nth-child(1) { animation-delay: 0s; }
+    .reveal-rtl:nth-child(2) { animation-delay: 0.1s; }
+    .reveal-rtl:nth-child(3) { animation-delay: 0.2s; }
+    .reveal-rtl:nth-child(4) { animation-delay: 0.3s; }
+    .reveal-rtl:nth-child(5) { animation-delay: 0.4s; }
+    .reveal-rtl:nth-child(6) { animation-delay: 0.5s; }
+
+    /* ── REDUCED MOTION ─────────────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.001ms !important;
-      }
+      .reveal-rtl { animation: none !important; opacity: 1 !important; transform: none !important; }
+      .wa-float   { animation: none; }
     }
   </style>
 </head>
 <body>
-  <section class="hero">
+
+  <!-- ① HERO ──────────────────────────────────────────── -->
+  <section class="hero bg-topo" id="hero">
+    <div class="diagonal-banner diagonal-banner--top"></div>
+    <div class="corner-tr"></div>
+
     <div class="container">
-      <p class="brand-line">רועי דנינו | תהליכי AI לעבודה אמיתית</p>
-      <blockquote class="voice-anchor">
+      <span class="badge reveal-rtl">תהליכי AI לעבודה אמיתית</span>
+
+      <blockquote class="voice-anchor reveal-rtl">
         ״הצ׳אט הזה גרוע״ זה בדרך כלל סימן שהוא מאלתר בלי context, תפקיד ותהליך.
       </blockquote>
-      <h1 class="hero-h1">
-        לא ה-AI הוא הבעיה.<br>
-        <span>הוא צריך מהלך עבודה.</span>
+
+      <h1 class="text-hook reveal-rtl" style="color: var(--white); margin-bottom: 16px;">
+        ה-AI עושה עבודה טובה<br>
+        <span class="emphasis">כשמנהלים אותו נכון.</span>
       </h1>
-      <p class="hero-sub">
-        בסשן 1:1 לוקחים משימה אמיתית מהעבודה שלך ובונים סביבה ומהלך עבודה שתוכל לפתוח ולהשתמש בהם כבר מחר.
-      </p>
-      <div class="hero-proof">
-        <div class="proof-row">
-          <span class="proof-mark">1</span>
-          <span>סביבת AI אחת שמותאמת לעבודה שלך</span>
-        </div>
-        <div class="proof-row">
-          <span class="proof-mark">2</span>
-          <span>מהלך עבודה אחד שאפשר להריץ שוב</span>
-        </div>
-      </div>
-      <p class="hero-mini-cta">2 שעות · 500 ₪ · זום או פרונטלי</p>
-    </div>
-  </section>
 
-  <section class="diagnosis">
-    <div class="container">
-      <p class="section-label">מה באמת קורה?</p>
-      <h2 class="section-title">זה לא שה-AI לא יודע, פשוט חסר לו חומר לעבוד איתו.</h2>
-      <p class="diagnosis-intro">
-        רוב האנשים מתחילים משאלה, אבל ה-AI צריך הקשר, תפקיד, גבולות ודוגמאות — בלי זה הוא משלים לבד.
-      </p>
-      <div class="break-cards">
-        <div class="break-card">אתה מבקש תוצאה, הוא מנחש את ההקשר.</div>
-        <div class="break-card">אתה מתקן את ה-prompt, אבל הבעיה היא המבנה.</div>
-        <div class="break-card">כל שיחה מתחילה מאפס, ואז הכל נעלם שוב.</div>
-      </div>
-      <p class="resolve">
-        <strong>לא ה-AI הוא הבעיה.</strong>
-        צריך לבנות לו סביבת עבודה ומהלך עבודה ברור.
-      </p>
-    </div>
-  </section>
-
-  <section class="session">
-    <div class="container">
-      <p class="section-label">סשן AI לעבודה אמיתית</p>
-      <h2 class="session-title">בונים מהלך מותאם לעבודה שלך.</h2>
-      <p class="session-sub">
-        אין פה סילבוס קבוע, מתחילים מהעבודה שלך, מהמשימה שלך, ומהמקום שבו AI כרגע לא עוזר מספיק.
+      <p class="text-subtitle reveal-rtl" style="color: var(--sky); margin-bottom: 8px;">
+        בסשן 1:1 אנחנו ניקח משימה אמיתית מהעבודה שלך ובונים מהלך עבודה וכוחות על מבוססי AI.
       </p>
 
-      <div class="build-steps">
-        <div class="build-step">
-          <span class="step-num">1</span>
-          <div class="step-copy">
-            <h3>אבחון קצר</h3>
-            <p>מה ניסית לעשות עם AI וזה לא עבד כמו שרצית? משם בוחרים משימה אמיתית לבנות עליה.</p>
-          </div>
-        </div>
-        <div class="build-step">
-          <span class="step-num">2</span>
-          <div class="step-copy">
-            <h3>סביבת AI אחת</h3>
-            <p>Claude Project / Custom GPT / Gemini Gem — לפי המקום שבו העבודה שלך באמת קורית.</p>
-          </div>
-        </div>
-        <div class="build-step">
-          <span class="step-num">3</span>
-          <div class="step-copy">
-            <h3>מהלך עבודה חכם</h3>
-            <p>לא סתם הרצאה — מהלך עבודה חכם שתוכל לפתוח ולעבוד איתו כל פעם.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="outcome-box">
-        יוצאים עם משהו בנוי: סביבה, תהליך, ומשימה אחת שכבר עברה דרך המערכת.
-      </div>
-
-      <p class="roi-note">
-        רועי דנינו — שנתיים שאני לומד בלי הפסקה על כל עולם ה-AI, ובזמן האחרון אני עוזר לאנשים לבנות תהליכי AI פרקטיים סביב העבודה האמיתית שלהם.
-      </p>
-
-      <div class="session-pills">
+      <div class="pills reveal-rtl">
         <span class="pill">2 שעות</span>
         <span class="pill">500 ₪</span>
-        <span class="pill">1:1</span>
         <span class="pill">זום או פרונטלי</span>
       </div>
     </div>
+
+    <div class="diagonal-banner diagonal-banner--bottom"></div>
   </section>
 
-  <section class="cta">
+  <!-- ② DIAGNOSIS ─────────────────────────────────────── -->
+  <section class="diagnosis" id="diagnosis">
+    <div class="corner-tr"></div>
+
     <div class="container">
-      <p class="section-label">בוא נדבר</p>
-      <h2 class="cta-headline">רוצה שנבנה את זה סביב העבודה שלך?</h2>
-      <p class="cta-sub">
-        שלח לי הודעה קצרה. נבין מה ניסית לעשות עם AI, איפה זה נתקע, ואם יש משימה אמיתית שאפשר לבנות סביבה.
+      <span class="badge badge--dark reveal-rtl">מה קורה בפועל?</span>
+
+      <h2 class="text-title reveal-rtl" style="color: var(--white); margin-bottom: 16px;">
+        זה לא שה-AI לא יודע — פשוט חסר לו חומר לעבוד איתו.
+      </h2>
+
+      <p class="text-body reveal-rtl" style="color: var(--sky); margin-bottom: 4px;">
+        רוב האנשים מתחילים משאלה, אבל ה-AI צריך הקשר, תפקיד, גבולות ודוגמאות — בלי זה הוא משלים לבד.
       </p>
-      <a href="https://wa.me/972527471565" class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        שלחו לי הודעה בווצאפ
-      </a>
-      <p class="cta-small">שיחת היכרות קצרה — ונסגור תאריך לסשן</p>
+
+      <div class="card-stack">
+        <div class="card card--dark reveal-rtl">
+          <div class="card-corner"></div>
+          <p class="card-body">אתה מבקש תוצאה, הוא מנחש את ההקשר.</p>
+        </div>
+        <div class="card card--dark reveal-rtl">
+          <div class="card-corner"></div>
+          <p class="card-body">אתה מתקן ניסוח, אבל הבעיה היא המבנה.</p>
+        </div>
+        <div class="card card--dark reveal-rtl">
+          <div class="card-corner"></div>
+          <p class="card-body">כל שיחה מתחילה מאפס, ואז הכל נעלם שוב.</p>
+        </div>
+      </div>
+
+      <blockquote class="quote-block bg-paper reveal-rtl">
+        <span class="quote-mark" aria-hidden="true">"</span>
+        <p class="text-subtitle quote-text">
+          ה-AI עושה עבודה טובה — צריך לבנות לו סביבת עבודה ומהלך עבודה ברור.
+        </p>
+      </blockquote>
     </div>
   </section>
 
-  <a href="https://wa.me/972527471565" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="שלחו לי הודעה בווצאפ">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    <span class="sr-only">שלחו לי הודעה בווצאפ</span>
+  <!-- ③ SESSION ───────────────────────────────────────── -->
+  <section class="session bg-paper" id="session">
+    <div class="corner-tr"></div>
+
+    <div class="container">
+      <span class="badge reveal-rtl">סשן AI לעבודה אמיתית</span>
+
+      <h2 class="text-title reveal-rtl" style="color: var(--navy); margin-bottom: 12px;">
+        בונים מהלך מותאם לעבודה שלך.
+      </h2>
+
+      <p class="text-subtitle reveal-rtl" style="color: var(--teal); margin-bottom: 4px;">
+        אין סילבוס קבוע — מתחילים מהמשימה שלך, מהמקום שבו AI כרגע לא עוזר מספיק.
+      </p>
+
+      <div class="steps">
+        <div class="step reveal-rtl">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>אבחון קצר</h3>
+            <p>מה ניסית לעשות עם AI וזה לא עבד? משם בוחרים משימה אמיתית לבנות עליה.</p>
+          </div>
+        </div>
+        <div class="step reveal-rtl">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>סביבת AI אחת</h3>
+            <p>Claude Project / Custom GPT — לפי המקום שבו העבודה שלך באמת קורית.</p>
+          </div>
+        </div>
+        <div class="step reveal-rtl">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>מהלך עבודה חכם</h3>
+            <p>לא הרצאה — מהלך עבודה שתוכל לפתוח ולעבוד איתו כל פעם.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="deliverables">
+        <div class="card card--light reveal-rtl">
+          <div class="card-corner"></div>
+          <span class="card-emoji">🧠</span>
+          <h3 class="card-title">מודל מחשבתי</h3>
+          <p class="card-body">תבין למה ה-AI עונה כמו שהוא עונה</p>
+        </div>
+        <div class="card card--light reveal-rtl">
+          <div class="card-corner"></div>
+          <span class="card-emoji">⚙️</span>
+          <h3 class="card-title">סביבת AI</h3>
+          <p class="card-body">Claude Project / GPT מותאם — פותחים פעם אחת, עובד בכל שיחה</p>
+        </div>
+        <div class="card card--light reveal-rtl">
+          <div class="card-corner"></div>
+          <span class="card-emoji">🔁</span>
+          <h3 class="card-title">תהליך שעובד</h3>
+          <p class="card-body">יוצאים עם משהו שפותחים ומשתמשים בו ביום שאחרי</p>
+        </div>
+        <div class="card card--light reveal-rtl">
+          <div class="card-corner"></div>
+          <span class="card-emoji">✅</span>
+          <h3 class="card-title">משימה חיה</h3>
+          <p class="card-body">משימה אחת שכבר עברה דרך המערכת בסשן עצמו</p>
+        </div>
+      </div>
+
+      <div class="roi-note reveal-rtl">
+        <p class="text-body">רועי דנינו — שנתיים שאני לומד וחוקר איך אפשר להשתמש ב-AI טוב יותר. ועכשיו אני עוזר לאחרים לעשות את אותו הדבר.</p>
+      </div>
+
+      <div class="pills" style="margin-top: 20px;">
+        <span class="pill pill--dark">2 שעות</span>
+        <span class="pill pill--dark">500 ₪</span>
+        <span class="pill pill--dark">זום או פרונטלי</span>
+        <span class="pill pill--dark">1:1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ④ CTA ────────────────────────────────────────────── -->
+  <section class="cta bg-topo" id="cta">
+    <div class="diagonal-banner diagonal-banner--top"></div>
+    <div class="corner-tr"></div>
+
+    <div class="container">
+      <span class="badge reveal-rtl">בוא נדבר</span>
+
+      <h2 class="text-title reveal-rtl" style="color: var(--white); margin-bottom: 16px;">
+        רוצה שנבנה את זה סביב העבודה שלך?
+      </h2>
+
+      <p class="text-body reveal-rtl" style="color: var(--sky); margin-bottom: 4px;">
+        שלח לי הודעה קצרה. נבין מה ניסית לעשות עם AI, איפה זה נתקע, ואם יש משימה אמיתית שאפשר לבנות סביבה.
+      </p>
+
+      <a class="btn-wa reveal-rtl" href="https://wa.me/972527471565" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        שלחו לי הודעה בווצאפ
+      </a>
+
+      <p class="text-body reveal-rtl" style="color: var(--sky); opacity: 0.7; margin-top: 12px; text-align: center;">
+        שיחת היכרות קצרה — ונסגור תאריך לסשן
+      </p>
+    </div>
+  </section>
+
+  <!-- FLOATING WHATSAPP ───────────────────────────────── -->
+  <a class="wa-float" href="https://wa.me/972527471565" target="_blank" rel="noopener" aria-label="שלח הודעה בווצאפ">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
   </a>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
   <script>
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (!reduceMotion && window.gsap && window.ScrollTrigger) {
-      gsap.registerPlugin(ScrollTrigger);
-
-      var tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-      tl
-        .from('.brand-line',    { y: 16, autoAlpha: 0, duration: 0.5 })
-        .from('.voice-anchor',  { y: 20, autoAlpha: 0, duration: 0.6 }, '-=0.2')
-        .from('.hero-h1',       { y: 30, autoAlpha: 0, duration: 0.7 }, '-=0.2')
-        .from('.hero-sub',      { y: 20, autoAlpha: 0, duration: 0.6 }, '-=0.3')
-        .from('.hero-proof',    { y: 18, autoAlpha: 0, duration: 0.55 }, '-=0.25');
-
-      gsap.utils.toArray('.diagnosis, .session, .cta').forEach(function(el) {
-        gsap.from(el, {
-          y: 40,
-          autoAlpha: 0,
-          duration: 0.7,
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true }
-        });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealObserver.unobserve(e.target);
+        }
       });
+    }, { threshold: 0.15 });
 
-      ScrollTrigger.batch('.break-card, .build-step', {
-        onEnter: function(els) {
-          gsap.from(els, { y: 28, autoAlpha: 0, stagger: 0.12, duration: 0.55 });
-        },
-        start: 'top 86%',
-        once: true
-      });
-
-      gsap.to('.floating-whatsapp', {
-        boxShadow: '0 16px 38px rgba(37,211,102,0.42), 0 0 0 12px rgba(37,211,102,0.08)',
-        repeat: -1,
-        yoyo: true,
-        duration: 1.45,
-        ease: 'power1.inOut'
-      });
-    }
+    document.querySelectorAll('.reveal-rtl').forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>
