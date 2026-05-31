@@ -71,9 +71,7 @@
 
     /* ── PAGE ────────────────────────────────────── */
     .page {
-      background:
-        linear-gradient(180deg, rgba(47,65,86,0.06), rgba(47,65,86,0) 34rem),
-        var(--paper);
+      background: var(--paper);
     }
 
     .container {
@@ -81,6 +79,53 @@
       margin-inline: auto;
       position: relative;
       z-index: 2;
+    }
+
+    /* ── FLOATING CIRCLES (hero brand elements) ── */
+    .hero-circle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-circle--1 {
+      width: clamp(280px, 40vw, 480px);
+      height: clamp(280px, 40vw, 480px);
+      background: radial-gradient(circle, rgba(86,124,141,0.28) 0%, transparent 70%);
+      top: -120px;
+      left: -100px;
+      animation: float-1 14s ease-in-out infinite;
+    }
+    .hero-circle--2 {
+      width: clamp(180px, 28vw, 340px);
+      height: clamp(180px, 28vw, 340px);
+      background: radial-gradient(circle, rgba(200,217,230,0.18) 0%, transparent 70%);
+      bottom: 40px;
+      right: -60px;
+      animation: float-2 18s ease-in-out infinite;
+    }
+    .hero-circle--3 {
+      width: clamp(100px, 16vw, 200px);
+      height: clamp(100px, 16vw, 200px);
+      background: radial-gradient(circle, rgba(200,217,230,0.12) 0%, transparent 70%);
+      top: 38%;
+      left: 55%;
+      animation: float-3 22s ease-in-out infinite;
+    }
+
+    @keyframes float-1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(18px, -22px) scale(1.04); }
+      66%       { transform: translate(-10px, 14px) scale(0.97); }
+    }
+    @keyframes float-2 {
+      0%, 100% { transform: translate(0, 0); }
+      50%       { transform: translate(-16px, -20px); }
+    }
+    @keyframes float-3 {
+      0%, 100% { transform: translate(0, 0); }
+      40%       { transform: translate(12px, 18px); }
+      80%       { transform: translate(-8px, -10px); }
     }
 
     /* ── CORNER TRIANGLES (brand element) ──────── */
@@ -92,14 +137,8 @@
     .deco-corner--tr {
       top: 0; right: 0;
       width: 0; height: 0;
-      border-top: 72px solid rgba(200,217,230,0.18);
-      border-left: 72px solid transparent;
-    }
-    .deco-corner--bl {
-      bottom: 0; left: 0;
-      width: 0; height: 0;
-      border-bottom: 48px solid rgba(200,217,230,0.1);
-      border-right: 48px solid transparent;
+      border-top: 80px solid rgba(200,217,230,0.22);
+      border-left: 80px solid transparent;
     }
 
     /* ── HERO ────────────────────────────────────── */
@@ -109,11 +148,10 @@
       min-height: 78vh;
       display: grid;
       align-items: center;
-      padding-block: clamp(88px, 14vw, 150px) clamp(72px, 10vw, 112px);
+      padding-block: clamp(88px, 14vw, 150px) clamp(80px, 12vw, 130px);
       color: var(--white);
       background:
-        linear-gradient(145deg, rgba(36,51,69,0.95), rgba(47,65,86,0.88)),
-        radial-gradient(circle at 22% 12%, rgba(200,217,230,0.3), transparent 36rem),
+        linear-gradient(150deg, rgba(30,48,69,0.98) 0%, rgba(47,65,86,0.92) 100%),
         var(--navy);
       overflow: hidden;
     }
@@ -123,12 +161,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      z-index: -1;
+      z-index: 1;
       background-image:
         linear-gradient(rgba(200,217,230,0.07) 1px, transparent 1px),
         linear-gradient(90deg, rgba(200,217,230,0.05) 1px, transparent 1px);
       background-size: 42px 42px;
-      mask-image: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.12));
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
     }
 
     /* grain texture */
@@ -136,7 +174,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 1;
+      z-index: 2;
       pointer-events: none;
       opacity: 0.034;
       background-image: var(--noise);
@@ -145,6 +183,8 @@
 
     .hero__inner {
       max-width: 760px;
+      position: relative;
+      z-index: 3;
     }
 
     .eyebrow {
@@ -221,9 +261,21 @@
       flex-shrink: 0;
     }
 
+    /* ── WAVE DIVIDER ────────────────────────────── */
+    .wave-divider {
+      background: var(--navy);
+      line-height: 0;
+      margin-bottom: -2px;
+    }
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+      height: clamp(48px, 7vw, 80px);
+    }
+
     /* ── OUTCOMES ────────────────────────────────── */
     .outcomes {
-      padding-block: clamp(72px, 10vw, 116px);
+      padding-block: clamp(64px, 9vw, 104px);
       background: var(--paper);
     }
 
@@ -256,10 +308,8 @@
     .outcome-list {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1px;
+      gap: 20px;
       margin-block-start: 44px;
-      border: 1px solid rgba(86,124,141,0.2);
-      background: rgba(86,124,141,0.16);
     }
 
     .outcome {
@@ -267,24 +317,49 @@
       overflow: hidden;
       min-height: 196px;
       padding: clamp(26px, 4vw, 40px);
-      background: var(--paper);
-      transition: background 0.28s ease, box-shadow 0.28s ease;
+      border-radius: 16px;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
     }
-    .outcome::before {
-      content: "";
-      position: absolute;
-      top: 0; right: 0;
-      width: 0; height: 0;
-      border-top: 0 solid var(--teal);
-      border-left: 0 solid transparent;
-      transition: border-top-width 0.28s ease, border-left-width 0.28s ease;
+    .outcome:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(47,65,86,0.18);
     }
-    .outcome:hover { background: var(--white); box-shadow: 0 6px 24px rgba(47,65,86,0.09); }
-    .outcome:hover::before { border-top-width: 44px; border-left-width: 44px; }
+
+    /* Card 1 — Navy */
+    .outcome:nth-child(1) {
+      background: var(--navy);
+    }
+    .outcome:nth-child(1) .outcome__number { color: var(--sky); }
+    .outcome:nth-child(1) h3 { color: var(--white); }
+    .outcome:nth-child(1) p  { color: rgba(200,217,230,0.75); }
+
+    /* Card 2 — Teal */
+    .outcome:nth-child(2) {
+      background: var(--teal);
+    }
+    .outcome:nth-child(2) .outcome__number { color: rgba(200,217,230,0.85); }
+    .outcome:nth-child(2) h3 { color: var(--white); }
+    .outcome:nth-child(2) p  { color: rgba(255,255,255,0.78); }
+
+    /* Card 3 — Sky */
+    .outcome:nth-child(3) {
+      background: var(--sky);
+    }
+    .outcome:nth-child(3) .outcome__number { color: var(--teal); }
+    .outcome:nth-child(3) h3 { color: var(--navy); }
+    .outcome:nth-child(3) p  { color: rgba(47,65,86,0.75); }
+
+    /* Card 4 — Vanilla outline */
+    .outcome:nth-child(4) {
+      background: var(--vanilla);
+      border: 2px solid rgba(86,124,141,0.3);
+    }
+    .outcome:nth-child(4) .outcome__number { color: var(--teal); }
+    .outcome:nth-child(4) h3 { color: var(--navy); }
+    .outcome:nth-child(4) p  { color: rgba(47,65,86,0.72); }
 
     .outcome__number {
       display: block;
-      color: var(--teal);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.06em;
@@ -293,14 +368,12 @@
     }
     .outcome h3 {
       margin: 0 0 10px;
-      color: var(--navy);
       font-size: clamp(20px, 2.8vw, 26px);
       font-weight: 800;
       line-height: 1.25;
     }
     .outcome p {
       margin: 0;
-      color: rgba(47,65,86,0.7);
       font-size: 16px;
       line-height: 1.65;
     }
@@ -325,12 +398,27 @@
       background-image: var(--noise);
       background-size: 300px 300px;
     }
+    /* Geometric circle accent in composer */
+    .composer::after {
+      content: "";
+      position: absolute;
+      width: clamp(200px, 30vw, 420px);
+      height: clamp(200px, 30vw, 420px);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(86,124,141,0.18) 0%, transparent 70%);
+      bottom: -100px;
+      left: -80px;
+      pointer-events: none;
+      z-index: 0;
+    }
 
     .composer__layout {
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
       gap: clamp(32px, 6vw, 80px);
       align-items: start;
+      position: relative;
+      z-index: 1;
     }
 
     .composer h2 {
@@ -353,6 +441,7 @@
       display: grid;
       gap: 18px;
       padding: clamp(24px, 4vw, 34px);
+      border-radius: 16px;
       border: 1px solid rgba(200,217,230,0.18);
       background: rgba(255,255,255,0.055);
       box-shadow: 0 28px 72px rgba(0,0,0,0.2);
@@ -370,7 +459,7 @@
     input, textarea {
       width: 100%;
       border: 1px solid rgba(200,217,230,0.28);
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 14px 16px;
       color: var(--white);
       background: rgba(255,255,255,0.08);
@@ -439,12 +528,14 @@
       .hero { min-height: auto; padding-block-start: 80px; }
       .outcome-list, .composer__layout { grid-template-columns: 1fr; }
       .outcome { min-height: auto; }
+      .hero-circle--3 { display: none; }
     }
 
     /* ── REDUCED MOTION ──────────────────────────── */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-circle { animation: none; }
       *, *::before, *::after {
         animation-duration: 0.001ms !important;
         transition-duration: 0.001ms !important;
@@ -457,8 +548,10 @@
 
     <!-- ① HERO ──────────────────────────────────── -->
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-circle hero-circle--1" aria-hidden="true"></div>
+      <div class="hero-circle hero-circle--2" aria-hidden="true"></div>
+      <div class="hero-circle hero-circle--3" aria-hidden="true"></div>
       <div class="deco-corner deco-corner--tr" aria-hidden="true"></div>
-      <div class="deco-corner deco-corner--bl" aria-hidden="true"></div>
       <div class="container">
         <div class="hero__inner">
           <div class="eyebrow reveal" style="--delay:0s">סשן AI לעבודה אמיתית</div>
@@ -482,6 +575,13 @@
         </div>
       </div>
     </section>
+
+    <!-- wave transition hero → outcomes -->
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,0 C240,70 480,20 720,50 C960,80 1200,10 1440,40 L1440,70 L0,70 Z" fill="#F8F3E9"/>
+      </svg>
+    </div>
 
     <!-- ② OUTCOMES ───────────────────────────────── -->
     <section class="outcomes" aria-labelledby="outcomes-title">
@@ -519,7 +619,6 @@
 
     <!-- ③ COMPOSER ───────────────────────────────── -->
     <section class="composer" id="composer" aria-labelledby="composer-title">
-      <div class="deco-corner deco-corner--tr" aria-hidden="true"></div>
       <div class="container composer__layout">
         <div>
           <h2 id="composer-title" class="reveal">יש לכם משימה שהייתם רוצים לתת לAI?</h2>
